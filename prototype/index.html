@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f6">
+  <title>PM Dashboard Prototype · Flow map</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="prototype-stage">
+    <div class="prototype-frame">
+      <!-- Layer A: prototype-only controls. Product UI is a separate sibling. -->
+      <aside class="flow-controller" aria-label="Prototype controller" data-layer="prototype-controller">
+        <div class="controller-heading">
+          <div class="controller-head-row">
+            <p class="eyebrow">PROTOTYPE</p>
+            <button
+              class="flow-area-toggle"
+              id="flow-area-toggle"
+              type="button"
+              aria-controls="flow-navigation"
+              aria-expanded="true"
+              aria-label="Collapse flow area"
+              title="Collapse flow area"
+            >
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path d="m10 3.5-4.5 4.5 4.5 4.5" />
+              </svg>
+            </button>
+          </div>
+          <h1>Flow map</h1>
+          <p class="controller-description">Choose a flow to preview its screen.</p>
+        </div>
+
+        <nav class="flow-navigation" id="flow-navigation" aria-label="Prototype flows">
+          <div class="section-heading">
+            <span>Flows</span>
+            <span class="flow-count" id="flow-count" aria-label="Number of flows">01</span>
+          </div>
+          <ol class="flow-list" id="flow-list"></ol>
+        </nav>
+
+        <div class="controller-footer">
+          <span class="footer-indicator" aria-hidden="true"></span>
+          <span>Prototype controller</span>
+        </div>
+      </aside>
+
+      <!-- Layer B: the product screen sits inside its own screen frame. -->
+      <main class="product-workspace" aria-label="Product preview workspace" data-layer="product-ui">
+        <header class="workspace-header">
+          <div class="workspace-context">
+            <span class="eyebrow">PRODUCT VIEWPORT</span>
+            <span class="context-divider" aria-hidden="true"></span>
+            <span class="active-flow-label" id="active-flow-label" aria-live="polite">Flow 01</span>
+          </div>
+          <span class="workspace-note">Embedded application</span>
+        </header>
+
+        <div class="product-screen-frame" role="group" aria-label="Product screen preview">
+          <section class="product-viewport" id="product-viewport" aria-label="PM Dashboard product UI">
+            <div class="product-app-root" id="product-app-root"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
