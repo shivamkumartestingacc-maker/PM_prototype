@@ -1551,6 +1551,7 @@ function renderCurrentScreen() {
 function renderActionDrawer(action) {
   const category = getCategory(action.category);
   const isPMAdmin = productState.currentRole === ROLES.ADMIN;
+  const isPM = productState.currentRole === ROLES.PM;
   const isHandover = action.category === "design-handover";
   const pkg = isHandover ? getHandoverPackage("dh-willow-park") : null;
 
@@ -1761,7 +1762,7 @@ function setFlowAreaCollapsed(collapsed) {
   prototypeState.flowAreaCollapsed = collapsed;
   prototypeFrame.classList.toggle("is-controller-collapsed", collapsed);
 
-  const actionLabel = collapsed ? "Expand flow area" : "Collapse flow area";
+  const actionLabel = collapsed ? "Expand prototype controls" : "Collapse prototype controls";
   flowAreaToggle.setAttribute("aria-expanded", String(!collapsed));
   flowAreaToggle.setAttribute("aria-label", actionLabel);
   flowAreaToggle.title = actionLabel;
