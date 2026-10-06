@@ -42,6 +42,34 @@
           <ol class="flow-list" id="flow-list"></ol>
         </nav>
 
+        <div class="flow-role-section" aria-label="Prototype role switcher">
+          <div class="section-heading">
+            <span>Switch Role</span>
+            <span class="flow-role-pill" id="proto-active-role">PM Admin</span>
+          </div>
+          <div class="flow-role-switch" role="group" aria-label="Prototype role selection">
+            <button
+              class="flow-role-option is-active"
+              id="proto-role-admin"
+              type="button"
+              data-proto-role="pm-admin"
+              aria-pressed="true"
+            >
+              PM Admin
+            </button>
+            <button
+              class="flow-role-option"
+              id="proto-role-pm"
+              type="button"
+              data-proto-role="pm"
+              aria-pressed="false"
+            >
+              PM
+            </button>
+          </div>
+          <p class="flow-role-hint">Affects navigation, quick actions, permissions, and available controls.</p>
+        </div>
+
         <div class="controller-footer">
           <span class="footer-indicator" aria-hidden="true"></span>
           <span>Prototype controller</span>
