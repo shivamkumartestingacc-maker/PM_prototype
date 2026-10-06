@@ -73,8 +73,29 @@ button {
   min-width: 0;
   flex-direction: column;
   padding: 30px 18px 16px;
+  overflow: hidden;
   background: var(--surface);
   border-right: 1px solid var(--line);
+}
+
+.controller-options {
+  display: flex;
+  min-height: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #D0CFCC transparent;
+  scrollbar-width: thin;
+}
+
+.controller-options::-webkit-scrollbar {
+  width: 5px;
+}
+
+.controller-options::-webkit-scrollbar-thumb {
+  background: #D0CFCC;
+  border-radius: 8px;
 }
 
 .controller-heading {

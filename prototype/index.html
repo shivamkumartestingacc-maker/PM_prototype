@@ -20,10 +20,10 @@
               class="flow-area-toggle"
               id="flow-area-toggle"
               type="button"
-              aria-controls="flow-navigation"
+              aria-controls="prototype-controls"
               aria-expanded="true"
-              aria-label="Collapse flow area"
-              title="Collapse flow area"
+              aria-label="Collapse prototype controls"
+              title="Collapse prototype controls"
             >
               <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                 <path d="m10 3.5-4.5 4.5 4.5 4.5" />
@@ -31,43 +31,47 @@
             </button>
           </div>
           <h1>Flow map</h1>
-          <p class="controller-description">Choose a flow to preview its screen.</p>
+          <p class="controller-description">Choose a role, then a flow, to preview its experience.</p>
         </div>
 
-        <nav class="flow-navigation" id="flow-navigation" aria-label="Prototype flows">
-          <div class="section-heading">
-            <span>Flows</span>
-            <span class="flow-count" id="flow-count" aria-label="Number of flows">01</span>
-          </div>
-          <ol class="flow-list" id="flow-list"></ol>
-        </nav>
+        <div class="controller-options" id="prototype-controls">
+          <section class="flow-role-section" aria-label="Choose a prototype role">
+            <div class="section-heading">
+              <span>Preview role</span>
+              <span class="flow-role-pill" id="proto-active-role">PM Admin</span>
+            </div>
+            <div class="flow-role-switch" role="group" aria-label="Choose PM Admin or PM flow">
+              <button
+                class="flow-role-option is-active"
+                id="proto-role-admin"
+                type="button"
+                data-proto-role="pm-admin"
+                aria-label="Preview as PM Admin"
+                aria-pressed="true"
+              >
+                PM Admin
+              </button>
+              <button
+                class="flow-role-option"
+                id="proto-role-pm"
+                type="button"
+                data-proto-role="pm"
+                aria-label="Preview as PM"
+                aria-pressed="false"
+              >
+                PM
+              </button>
+            </div>
+            <p class="flow-role-hint">Updates the product preview with that role’s actions and permissions.</p>
+          </section>
 
-        <div class="flow-role-section" aria-label="Prototype role switcher">
-          <div class="section-heading">
-            <span>Switch Role</span>
-            <span class="flow-role-pill" id="proto-active-role">PM Admin</span>
-          </div>
-          <div class="flow-role-switch" role="group" aria-label="Prototype role selection">
-            <button
-              class="flow-role-option is-active"
-              id="proto-role-admin"
-              type="button"
-              data-proto-role="pm-admin"
-              aria-pressed="true"
-            >
-              PM Admin
-            </button>
-            <button
-              class="flow-role-option"
-              id="proto-role-pm"
-              type="button"
-              data-proto-role="pm"
-              aria-pressed="false"
-            >
-              PM
-            </button>
-          </div>
-          <p class="flow-role-hint">Affects navigation, quick actions, permissions, and available controls.</p>
+          <nav class="flow-navigation" id="flow-navigation" aria-label="Prototype flows">
+            <div class="section-heading">
+              <span>Flows</span>
+              <span class="flow-count" id="flow-count" aria-label="Number of flows">01</span>
+            </div>
+            <ol class="flow-list" id="flow-list"></ol>
+          </nav>
         </div>
 
         <div class="controller-footer">
